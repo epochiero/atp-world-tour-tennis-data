@@ -23,7 +23,7 @@ unindexed = []
 read_csv(unindexed, input_csv_filename)
 
 indexed = []
-for i in xrange(0, len(unindexed)):
+for i in range(0, len(unindexed)):
     row = [i + start_index] + unindexed[i]
     indexed.append(row)
 

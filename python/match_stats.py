@@ -15,15 +15,15 @@ tourney_details_url_xpath = "//tr[contains(@class, 'tourney-result')][*]/td[8]/a
 tourney_url_suffixes = xpath_parse(year_tree, tourney_details_url_xpath)
 tourney_count = len(tourney_url_suffixes)
 
-print ''
-print 'Collecting match stats data for ' + '\x1b[0;32;40m' + str(tourney_count) + '\x1b[0m' + ' tournaments:'
-print ''
-print 'Index    Tourney slug       Matches'
-print '-----    ------------       -------'
+print('')
+print('Collecting match stats data for ' + '\x1b[0;32;40m' + str(tourney_count) + '\x1b[0m' + ' tournaments:')
+print('')
+print('Index    Tourney slug       Matches')
+print('-----    ------------       -------')
 
 # Iterate through each tournament
 match_stats_data_scrape = []
-for i in xrange(int(start_index), tourney_count):
+for i in range(int(start_index), tourney_count):
 
     # Parse tourney tree
     tourney_url = url_prefix + tourney_url_suffixes[i]
@@ -56,7 +56,7 @@ for i in xrange(int(start_index), tourney_count):
     else:
         spacing1 = format_spacing(5, tourney_index)
         spacing2 = format_spacing(15, tourney_slug)
-        print tourney_index + spacing1 + '    ' + tourney_slug + spacing2 + '    Match stats URL problems'
+        print(tourney_index + spacing1 + '    ' + tourney_slug + spacing2 + '    Match stats URL problems')
 
     # STEP 3: Output to CSV
     filename = "match_stats_" + year + "_" + start_index

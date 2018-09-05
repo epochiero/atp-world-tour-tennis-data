@@ -9,16 +9,16 @@ csv_file = 'weeks.csv'
 weeks_list = []
 read_csv(weeks_list, csv_file)
 
-print ""
-print "Collecting weekly rankings data from " + str(len(weeks_list)) + " weeks..."
+print("")
+print("Collecting weekly rankings data from " + str(len(weeks_list)) + " weeks...")
 
-print ""
-print "Index    Week"
-print "-----    ----"
+print("")
+print("Index    Week")
+print("-----    ----")
 
 #for h in xrange(index, 1):
 #for h in xrange(index, len(weeks_list)):
-for h in xrange(start_index, end_index + 1):
+for h in range(start_index, end_index + 1):
     week = weeks_list[h][0]
     week_url = "http://www.atpworldtour.com/en/rankings/singles?rankDate=" + week + "&rankRange=1-3000"
 
@@ -53,7 +53,7 @@ for h in xrange(start_index, end_index + 1):
 
     rankings = []
     #for i in xrange(1160, 1170):
-    for i in xrange(0, player_count):
+    for i in range(0, player_count):
         rank_text = rank_cleaned[i]
         rank_number = rank_text.replace('T', '')
 
@@ -91,4 +91,4 @@ for h in xrange(start_index, end_index + 1):
         filename = 'rankings_' + str(h) + '_' + week
         array2csv(rankings, filename)
 
-    print str(h) + "        " + week
+    print(str(h) + "        " + week)

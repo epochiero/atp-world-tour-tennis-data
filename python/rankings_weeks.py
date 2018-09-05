@@ -6,4 +6,4 @@ weeks_xpath = "//ul[@data-value = 'rankDate']/li/@data-value"
 weeks_parsed = xpath_parse(weeks_tree, weeks_xpath)
 weeks_cleaned = regex_strip_array(weeks_parsed)
 for row in weeks_cleaned:
-    print row
+    print(row)
